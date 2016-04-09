@@ -1,0 +1,17 @@
+.git
+*.git
+.gitignore
+
+.DS_Store
+.svn
+
+log/*.log
+tmp/**
+
+node_modules/
+test/
+
+.sass-cache
+
+css/reveal.min.css
+js/reveal.min.js

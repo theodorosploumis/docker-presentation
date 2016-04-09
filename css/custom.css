@@ -1,0 +1,31 @@
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  box-shadow: none;
+}
+
+.reveal code {
+  font-size: 18px;
+  background: #3F3F3F;
+  font-family: monospace;
+  padding: 10px;
+}
+
+.reveal code p {
+  margin: 0;
+}
+
+.reveal table.small-size {
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.reveal abbr {
+  border-bottom: 1px dotted #DCDCDC;
+  cursor: help;
+}
+
+.reveal blockquote {
+  padding: 5px 20px;
+}

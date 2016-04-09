@@ -1,0 +1,17 @@
+# Creates a Drupal web app with MySQL database
+# Usage: docker-compose up -d
+version: "2"
+services:
+  web:
+    image: drupal:8.0.6-apache
+    ports:
+      - "8380:80"
+    links:
+      - mysql
+  mysql:
+    image: mysql:5.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=drupal
+      - MYSQL_USER=drupal
+      - MYSQL_PASSWORD=drupal
