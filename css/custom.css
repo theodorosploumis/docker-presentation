@@ -29,3 +29,22 @@
 .reveal blockquote {
   padding: 5px 20px;
 }
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  text-transform: none;
+}
+
+.reveal h3 {
+  margin-bottom: 40px;
+}
+
+.reveal h6 {
+  font-size: 18px;
+  margin-bottom: 4px;
+}

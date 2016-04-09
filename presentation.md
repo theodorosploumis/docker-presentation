@@ -1,17 +1,19 @@
-![Docker carries Python meetup!](https://avatars2.githubusercontent.com/u/18222668)
+![Docker carries Python meetup!](img/docker_python.png)
 
-## Docker for Developers
+## Docker for Developers - Introduction
 
 #### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
 
-<small>[TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](twitter.com/theoploumis)</small><br>
-<small>Get the presentation [online](http://theodorosploumis.github.io/docker-presentation/)/[source](https://github.com/theodorosploumis/docker-presentation)</small>
+###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](twitter.com/theoploumis)
+________________________
+
+###### Get them: [online presentation](http://theodorosploumis.github.io/docker-presentation/) / [source code](https://github.com/theodorosploumis/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
 
 ---
 
 ### Let me ask you
 
-- Who knows about [Docker]([docker.com](http://docker.com))?
+- Who knows about [Docker]([docker.com](http://docker.com)?
 - Who uses Docker for development?
 - Who uses Docker in production?
 - Who tried but could not do it?
@@ -20,17 +22,15 @@
 
 ### What is Docker (v1.9)
 
-<section>
-  <blockquote>
-    Docker is an open platform for developing, shipping, and running applications.
-    <br><br>
-    Docker allows you to package an application with all of its dependencies into a standardized unit for software development.
-  </blockquote>
-</section>
+> Docker is an open platform for developing, shipping, and running applications.
 
-<section>
-  <a href="https://www.docker.com/sites/default/files/what-is-vm-diagram.png"><img src="https://www.docker.com/sites/default/files/what-is-vm-diagram.png" title="Docker stack"></a>
-</section>
+> Docker allows you to package an application with all of its dependencies into a standardized unit for software development.
+
+---
+
+### Docker vs VMs
+
+![Docker vs traditional Virtualization](https://insights.sei.cmu.edu/assets/content/VM-Diagram.png)
 
 ---
 
@@ -41,7 +41,9 @@
  - March 2013
  - Apache 2.0 license
  - 30k stars on Github
+ - 260k public repositories on hub.docker.com
  - Docker Inc acquires everyone <small><sup>TM</sup></small>
+ - Docker joins the "[Open Container Initiative](https://www.opencontainers.org/)", June 2015
 
 ---
 
@@ -66,13 +68,14 @@
  - Scaling
  - Development collaboration
  - System configuration
+ - Educational sandboxes
  - Local development
  - Multi-tier applications
  - PaaS & SaaS infrastructure and/or apps
 
 ---
 
-### [Technology behind Docker](https://docs.docker.com/engine/understanding-docker/)
+### Technology behind Docker
 
  - Linux x86-64
  - Go language
@@ -82,12 +85,14 @@
  - Control Groups (cgroups)
  - Container format (libcontainer)
 
+###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
+
 ---
 
 ### The Docker architecture
 
-<img src="https://docs.docker.com/engine/article-img/architecture.svg" title="Docker architecture">
-<small>See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)</small>
+![Docker architecture](https://docs.docker.com/engine/article-img/architecture.svg)
+###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
 
 ---
 
@@ -150,9 +155,9 @@ A (hosted) service containing repositories of images which responds to the Regis
 
 ---
 
-### Docker Commands
+### Common Docker Commands
 
-```bash
+```
 // General info
 docker [COMMAND] --help
 docker info
@@ -160,11 +165,11 @@ docker version
 docker network ls
 
 // Images
-docker images
-docker export // import
-docker build
+docker images // [image_name]
+docker pull/push [image]
 
 // Containers
+docker run
 docker ps // -a, -l
 docker stop/start/restart [CONTAINER]
 docker stats [CONTAINER]
@@ -173,8 +178,6 @@ docker port [CONTAINER]
 docker inspect [CONTAINER]
 docker inspect -f "{{ .State.StartedAt }}" [CONTAINER]
 docker rm [CONTAINER]
-docker diff
-docker commit
 
 ```
 
@@ -214,23 +217,26 @@ docker run -i -t ubuntu /bin/bash
 - Docker [Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
 - [Linked](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/) containers
 - Using docker [Compose](https://docs.docker.com/compose/)
-- Package an app with its environment (tar)
-- Share an image (public, this presentation)
-- Testing usage (travis.ci)
+- Share an image (share this presentation)
+- Package an app with its environment
+- Screen and sound within containers
 
 ---
 
 ### Example: Showcase
-<pre><code>docker pull supertest2014/nyan
+```
+docker pull supertest2014/nyan
 docker run --rm -it supertest2014/nyan
-</pre></code>
+```
 
 ---
 
 ### Example: SSH into a container
-<pre><code>docker pull ubuntu
-docker run -it --name python_meetup ubuntu /bin/bash
-</pre></code>
+
+```
+docker pull ubuntu
+docker run -it --name ubuntu_example ubuntu /bin/bash
+```
 
 ---
 
@@ -238,7 +244,8 @@ docker run -it --name python_meetup ubuntu /bin/bash
 
 Let's build a [jenkins image](https://github.com/thess-docker/komljen-dockerfile-examples/blob/master/jenkins/Dockerfile)
 
-<pre><code>cd ~/Docker-presentation
+```
+cd ~/Docker-presentation
 git clone git@github.com:thess-docker/komljen-dockerfile-examples.git
 cd komljen-dockerfile-examples/jenkins
 docker build -t jenkins-local .
@@ -246,7 +253,7 @@ docker build -t jenkins-local .
 // Test it
 docker run -d -p 8099:8080 --name jenkins_example jenkins-local
 // Open http://localhost:8099
-</pre></code>
+```
 
 ---
 
@@ -254,22 +261,24 @@ docker run -d -p 8099:8080 --name jenkins_example jenkins-local
 
 Let's use [Apache server](https://bitbucket.org/EdBoraas/apache-docker/src/)
 
-<pre><code>cd ~/Docker-presentation
+```
+cd ~/Docker-presentation
 mkdir apache-example
 cd apache-example
 
 docker pull eboraas/apache
-docker run --name apache_example \
+docker run --name apache_volume_example \
            -p 8180:80 -p 443:443 \
            -v $(pwd):/var/www/ \
            -d eboraas/apache
 
-// Create an index.html file
-mkdir html && cd html
-echo "It works using linux mount..." >> index.html
+// Locally create an index.html file
+mkdir html
+cd html
+echo "It works using mount." >> index.html
 
 // Open http://localhost:8180 to view the html file
-</pre></code>
+```
 
 ---
 
@@ -277,7 +286,8 @@ echo "It works using linux mount..." >> index.html
 
 Let's create a [Drupal app](https://hub.docker.com/_/drupal/) (apache, php, mysql, drupal)
 
-<pre><code>cd ~/Docker-presentation
+```
+cd ~/Docker-presentation
 mkdir drupal-link-example
 cd drupal-link-example
 
@@ -293,51 +303,137 @@ docker run --name mysql_example \
            -d mysql:5.5
 
 // Start a Drupal container and link it with mysql
-// Usage: --link <name or id>:alias
-docker run --name drupal_example \
+// Usage: --link [name or id]:alias
+docker run -d --name drupal_example \
            -p 8280:80 \
            --link mysql_example:mysql \
-           -d drupal:8.0.6-apache
+           drupal:8.0.6-apache
 
 // Open http://localhost:8280 to continue with the installation
 // On the db host use: mysql
 
 // See the linking
 docker inspect -f "{{ .HostConfig.Links }}" drupal_example
-</pre></code>
+```
 
 ---
 
 ### Example: Using Docker Compose
+
 Let's create a [Drupal app](https://hub.docker.com/_/drupal/) even more easily...
 
-<pre><code>cd ~/Docker-presentation
+```
+cd ~/Docker-presentation
 git clone git@github.com:thess-docker/slides.git
 cd slides/docker-compose
 
 // Run docker-compose using the docker-compose.yml
 cat docker-compose.yml
 docker-compose up -d -f docker-compose.yml
-</pre></code>
+```
 
 ---
 
-### Example: Push an Image to a registry
+### Example: Share a public Image
 
-<pre><code>cd ~/Docker-presentation
-git clone git@github.com:thess-docker/slides.git
-cd slides
+```
+cd ~/Docker-presentation
+git clone git@github.com:theodorosploumis/docker-presentation.git
+cd docker-presentation
 
 docker pull nimmis/alpine-apache
 docker build -t tplcom/docker-presentation .
 
 // Test it
-docker run -itd --name docker_presentation -p 8480:80 tplcom/docker-presentation
+docker run -itd --name docker_presentation \
+           -p 8480:80 \
+           tplcom/docker-presentation
+
 // Open http://localhost:8480, you should see this presentation
 
 // Push it on the hub.docker.com
 docker push tplcom/docker-presentation
-</pre></code>
+```
+
+---
+
+### Example: Export/Save/Load etc
+
+```
+docker pull nimmis/alpine-apache
+docker run -d --name apache_example \
+           nimmis/alpine-apache
+
+// Create a file inside the container.
+// See https://github.com/nimmis/docker-alpine-apache for details.
+docker exec -ti apache_example \
+            /bin/sh -c 'mkdir /test && echo "This is it." >> /test/test.txt'
+
+// Test it. You should see message: "This is it."
+docker exec apache_example cat /test/test.txt
+
+// Commit the change.
+docker commit apache_export_example myapache:latest
+
+// Create a new container with the new image.
+docker run -d --name myapache_example myapache
+
+// You should see the new folder/file inside the myapache_example container.
+docker exec myapache_example cat /test/test.txt
+
+// Export the container as image
+cd ~/Docker-presentation
+docker export myapache_example > myapache_example.tar
+
+// Import a new image from the exported files
+cd ~/Docker-presentation
+docker import myapache_example.tar myapache:new
+
+// Save a new image as tar
+docker save -o ~/Docker-presentation/myapache_image.tar myapache:new
+
+// Load an image from tar file
+docker load < myapache_image.tar
+
+```
+
+---
+
+### Example: GUI with Docker
+
+See examples at [hub.docker.com/u/jess](https://hub.docker.com/u/jess/)
+
+```
+// Libreoffice
+docker run  -d \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -e DISPLAY=unix$DISPLAY \
+            -e GDK_SCALE \
+            -e GDK_DPI_SCALE \
+            --name libreoffice \
+            jess/libreoffice
+
+// SublimeText 3
+docker run -it \
+           -v $HOME/.config/sublime-text-3/:/root/.config/sublime-text-3 \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -e DISPLAY=$DISPLAY \
+           --name sublime_text
+           jess/sublime-text-3
+
+// Audacity (sound in docker container)
+docker run  -d \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            -e DISPLAY=unix$DISPLAY \
+            -e QT_DEVICE_PIXEL_RATIO \
+            --device /dev/snd \
+            --group-add audio \
+            --name audacity \
+            jess/audacity
+
+```
 
 ---
 
@@ -360,8 +456,9 @@ There are known best practices ([1](https://docs.docker.com/engine/userguide/eng
 | Type | Software |
 |:----:|----------|
 | Clustering/orchestration | [Swarm](https://docs.docker.com/swarm/), [Kubernetes](http://kubernetes.io/), [Marathon](https://mesosphere.github.io/marathon/), [MaestroNG](https://github.com/signalfx/maestro-ng), [decking](http://decking.io/), [shipyard](http://shipyard-project.com/) |
-| Docker registries | [Portus](http://port.us.org/), [Docker Distribution](https://github.com/docker/distribution), [hub.docker.com](http://hub.docker.com), [quay.io](https://quay.io), [Google container registry](https://cloud.google.com/tools/container-registry/), [Artifactory](https://www.jfrog.com/artifactory/) |
-| PaaS based on Docker | [Rancher](http://rancher.com/), [Tsuru](https://tsuru.io/), [Octohost](http://octohost.io/), [DEIS](http://deis.io/) |
+| Docker registries | [Portus](http://port.us.org/), [Docker Distribution](https://github.com/docker/distribution), [hub.docker.com](http://hub.docker.com), [quay.io](https://quay.io), [Google container registry](https://cloud.google.com/tools/container-registry/), [Artifactory](https://www.jfrog.com/artifactory/), [projectatomic.io](http://www.projectatomic.io/) |
+| PaaS with Docker | [Rancher](http://rancher.com/), [Tsuru](https://tsuru.io/), [dokku](https://github.com/dokku/dokku), [flynn](https://flynn.io/),  [Octohost](http://octohost.io/), [DEIS](http://deis.io/) |
+| OS made of Containers | [RancherOS](http://rancher.com/rancher-os/) |
 
 ---
 
@@ -370,7 +467,6 @@ There are known best practices ([1](https://docs.docker.com/engine/userguide/eng
 - [Rocket](https://github.com/coreos/rkt)
 - [Linux Containers](https://linuxcontainers.org/)
 - [drawbridge](http://research.microsoft.com/en-us/projects/drawbridge/)
-- [lcd](http://www.ubuntu.com/cloud/lxd)
 - [Project Calico](https://www.projectcalico.org/)
 
 ---
@@ -380,18 +476,20 @@ There are known best practices ([1](https://docs.docker.com/engine/userguide/eng
  - [Awesome Docker](https://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
  - [Docker cheat sheet](https://github.com/wsargent/docker-cheat-sheet)
  - [Docker in Practice](https://www.manning.com/books/docker-in-practice) (book)
+ - [Docker aliases/shortcuts](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
 
 ---
 
+![Docker logo](img/docker_logo.png)
+
 ### Questions?
 
-<small>Upcoming: Docker in production, Scaling Containers, Private registry, PaaS with Docker.</small>
-<small>In this presentation I have used [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).</small>
+> Next: Docker in production, Scaling, Private registries, PaaS.
+
+###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
 
 ---
 
 ### Bonus!
 
-![Docker logo](img/docker_logo.png)
-
-> The [SKGTech.io docker image](https://github.com/skgtech/skgtech.io-docker)
+> Get the [SKGTech.io docker image](https://github.com/skgtech/skgtech.io-docker)
