@@ -4,16 +4,14 @@
 
 #### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
 
-[docker.com](http://docker.com)
-
 <small>[TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](twitter.com/theoploumis)</small><br>
-<small>Get the presentation [online](https://thess-docker.github.io/slides)/[source](https://github.com/thess-docker/slides)</small>
+<small>Get the presentation [online](http://theodorosploumis.github.io/docker-presentation/)/[source](https://github.com/theodorosploumis/docker-presentation)</small>
 
 ---
 
 ### Let me ask you
 
-- Who knows about Docker?
+- Who knows about [Docker]([docker.com](http://docker.com))?
 - Who uses Docker for development?
 - Who uses Docker in production?
 - Who tried but could not do it?
@@ -338,7 +336,7 @@ docker run -itd --name docker_presentation -p 8480:80 tplcom/docker-presentation
 // Open http://localhost:8480, you should see this presentation
 
 // Push it on the hub.docker.com
-
+docker push tplcom/docker-presentation
 </pre></code>
 
 ---
