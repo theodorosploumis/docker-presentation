@@ -1,4 +1,4 @@
-![Docker carries Python meetup!](img/docker_python.png)
+![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo.png)
 
 ## Docker for Developers - Introduction
 
@@ -194,7 +194,7 @@ docker run -i -t ubuntu /bin/bash
  - Allocates a filesystem and mounts a read-write <abbr title="A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.">layer</abbr>
  - Allocates a network / bridge interface
  - Sets up an <abbr title="An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.">IP address</abbr>
- - Executes a process that you specify (<code>/bin/bash</code>)
+ - Executes a process that you specify (```/bin/bash```)
  - Captures and provides application output
 
 ---
@@ -480,9 +480,9 @@ There are known best practices ([1](https://docs.docker.com/engine/userguide/eng
 
 ---
 
-![Docker logo](img/docker_logo.png)
-
 ### Questions?
+
+![Pythons over Docker!](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_python.png)
 
 > Next: Docker in production, Scaling, Private registries, PaaS.
 
