@@ -38,3 +38,9 @@ function docker-ssh-bash() {
 function docker-ssh-sh() {
     docker exec -i -t "$@" /bin/sh
 }
+
+# Pull all images
+function docker-pull-all(){
+  docker images | awk '(NR>1) && ($2!~/none/) {print $1":"$2}' | xargs -L1 docker pull
+}
+
