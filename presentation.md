@@ -79,7 +79,7 @@ ________________________
  - [Go](https://golang.org/) language
  - [Client - Server](https://www.wikiwand.com/en/Client%E2%80%93server_model) (deamon) architecture
  - Union file systems ([UnionFS](https://www.wikiwand.com/en/UnionFS): AUFS, btrfs, vfs etc)
- - [Namespaces](http://man7.org/linux/man-pages/man7/namespaces.7.html) (pid, net, ipc, mnt, uts)
+ - [Namespaces](https://en.wikipedia.org/wiki/Cgroups#NAMESPACE-ISOLATION) (pid, net, ipc, mnt, uts)
  - Control Groups ([cgroups](https://www.wikiwand.com/en/Cgroups))
  - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer))
 
@@ -187,12 +187,12 @@ docker rm [CONTAINER]
 docker run -i -t ubuntu /bin/bash
 ```
 
- - Pulls the ubuntu <abbr title="A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.">image</abbr> from the <abbr title="The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.">registry</abbr>
- - Creates a new <abbr title="A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.">container</abbr>
- - Allocates a filesystem and mounts a read-write <abbr title="A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.">layer</abbr>
- - Allocates a network / bridge interface
- - Sets up an <abbr title="An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.">IP address</abbr>
- - Executes a process that you specify (```/bin/bash```)
+ - Pulls the ubuntu [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
+ - Creates a new [container](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
+ - Allocates a filesystem and mounts a read-write [layer](https://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
+ - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
+ - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
+ - Executes a process that you specify (``` /bin/bash ```)
  - Captures and provides application output
 
 ---
