@@ -62,28 +62,26 @@ ________________________
 
 ### Common Docker usages
 
- - Rapid building
- - Debugging/Testing
+ - Sandbox environment (develop, test, debug, educate)
  - Continuous Integration & Deployment
- - Scaling
+ - Scaling apps
  - Development collaboration
- - System configuration
- - Educational sandboxes
+ - Infrastructure configuration
  - Local development
  - Multi-tier applications
- - PaaS & SaaS infrastructure and/or apps
+ - PaaS, SaaS
 
 ---
 
 ### Technology behind Docker
 
- - Linux x86-64
- - Go language
- - Client - Server (deamon) architecture
- - Union file systems (UnionFS: AUFS, btrfs, vfs etc)
- - Namespaces (pid, net, ipc, mnt, uts)
- - Control Groups (cgroups)
- - Container format (libcontainer)
+ - Linux [x86-64](https://www.wikiwand.com/en/X86-64)
+ - [Go](https://golang.org/) language
+ - [Client - Server](https://www.wikiwand.com/en/Client%E2%80%93server_model) (deamon) architecture
+ - Union file systems ([UnionFS](https://www.wikiwand.com/en/UnionFS): AUFS, btrfs, vfs etc)
+ - [Namespaces](http://man7.org/linux/man-pages/man7/namespaces.7.html) (pid, net, ipc, mnt, uts)
+ - Control Groups ([cgroups](https://www.wikiwand.com/en/Cgroups))
+ - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer))
 
 ###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
 
@@ -124,7 +122,7 @@ but instead through the Docker client with the RESTful api or sockets.
 
 ### Docker engine
 
-A Client with a Daemon as also as the docker-composer. Usually referred simply as "docker".
+A Client with a Daemon as also as the docker-compose tool. Usually referred simply as "docker".
 
 ---
 
