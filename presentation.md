@@ -157,18 +157,19 @@ A (hosted) service containing repositories of images which responds to the Regis
 
 ```
 // General info
-docker [COMMAND] --help
+man docker // man docker-run
+docker help // docker help run
 docker info
 docker version
 docker network ls
 
 // Images
-docker images // [image_name]
-docker pull/push [image]
+docker images // docker [IMAGE_NAME]
+docker pull [IMAGE] // docker push [IMAGE]
 
 // Containers
 docker run
-docker ps // -a, -l
+docker ps // docker ps -a, docker ps -l
 docker stop/start/restart [CONTAINER]
 docker stats [CONTAINER]
 docker top [CONTAINER]
@@ -240,12 +241,12 @@ docker run -it --name ubuntu_example ubuntu /bin/bash
 
 ### Example: Build an Image
 
-Let's build a [jenkins image](https://github.com/thess-docker/komljen-dockerfile-examples/blob/master/jenkins/Dockerfile)
+Let's build a [jenkins image](https://github.com/komljen/dockerfile-examples/blob/master/jenkins/Dockerfile)
 
 ```
 cd ~/Docker-presentation
-git clone git@github.com:thess-docker/komljen-dockerfile-examples.git
-cd komljen-dockerfile-examples/jenkins
+git clone git@github.com:komljen/dockerfile-examples.git.git
+cd dockerfile-examples/jenkins
 docker build -t jenkins-local .
 
 // Test it
@@ -322,8 +323,8 @@ Let's create a [Drupal app](https://hub.docker.com/_/drupal/) even more easily..
 
 ```
 cd ~/Docker-presentation
-git clone git@github.com:thess-docker/slides.git
-cd slides/docker-compose
+git clone git@github.com:theodorosploumis/docker-presentation.git
+cd docker-presentation/examples/docker-compose
 
 // Run docker-compose using the docker-compose.yml
 cat docker-compose.yml
