@@ -97,7 +97,7 @@ ________________________
 ### Docker components
 
  - (Docker) client
- - deamon
+ - daemon
  - engine
  - machine
  - compose
