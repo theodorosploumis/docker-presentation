@@ -446,6 +446,7 @@ There are known best practices ([1](https://docs.docker.com/engine/userguide/eng
 - Full stack Images vs 1 process per Container
 - Create your private registry
 - Create shortcut commands
+- Use docker-compose.yml templates (check [lorry.io](https://lorry.io/))
 - Be aware of the hub.docker.com agent version
 
 ---
