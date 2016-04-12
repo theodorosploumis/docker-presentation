@@ -438,7 +438,7 @@ docker run  -d \
 
 ### Docker tips
 
-There are known best practices ([1](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/), [2](http://crosbymichael.com/dockerfile-best-practices.html), [3](http://crosbymichael.com/dockerfile-best-practices-take-2.html), [4](https://github.com/replicatedhq/dockerfilelint#checks-performed), [5](https://getcarina.com/docs/best-practices/docker-best-practices-dockerfile/))
+There are known best practices (see a list at [examples/tips](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/tips))
 
 - Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [imagelayers.io](https://imagelayers.io))
 - Create your own tiny base
