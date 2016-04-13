@@ -9,6 +9,8 @@ ________________________
 
 ###### Get them: [online presentation](http://theodorosploumis.github.io/docker-presentation/) / [source code](https://github.com/theodorosploumis/docker-presentation) / [docker image](https://hub.docker.com/r/tplcom/docker-presentation/)
 
+###### Under [Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/) license.
+
 ---
 
 ### Let me ask you
