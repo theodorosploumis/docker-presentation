@@ -477,7 +477,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
  - [Awesome Docker](https://github.com/veggiemonk/awesome-docker) (list of Docker resources & projects)
  - [Docker cheat sheet](https://github.com/wsargent/docker-cheat-sheet)
- - [Docker in Practice](https://www.manning.com/books/docker-in-practice) (book)
+ - [Docker in Practice](https://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
  - [Docker aliases/shortcuts](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
 
 ---
