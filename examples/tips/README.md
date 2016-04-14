@@ -19,7 +19,7 @@ with a pull request.
 - When you need software to install another software remove the first after the build
 - Uppercase the Dockerfile instructions
 - Split multiprocess images to several images with one process per images
-- Use ADD at the end of the Dockerfile (except if files are needed before)
+- Use ADD and VOLUME at the end of the Dockerfile (except if files are needed before)
 - Prefer using an ENTRYPOINT always
 - Install specific versions of software
 - With COPY the directories are not copied, only their files
@@ -35,6 +35,8 @@ with a pull request.
 - Never do things like ```apt-get upgrade``` inside a Dockerfile
 - Containers should model processes and not virtual machines
 - Create local shortcut/aliases for common docker commands and workflows
+- Be careful with volumes. When docker mounts folders on read-write mode your files may be deleted
+- A volume will never be deleted as long as a container is linked to it
 - Use shell scripts for complicated RUN commands on the Dockerfile as also as for starting processes on containers
 
 #### Resources
@@ -45,3 +47,7 @@ with a pull request.
 - (07/2014) [10 Docker Tips and Tricks That Will Make You Sing A Whale Song of Joy](http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/)
 - [Linter and validator for Dockerfile](https://github.com/replicatedhq/dockerfilelint#checks-performed)
 - (10/2015) [Docker best practices: Dockerfile](https://getcarina.com/docs/best-practices/docker-best-practices-dockerfile/)
+- (12/2014) [Understanding Volumes in Docker](http://container-solutions.com/understanding-volumes-docker/)
+- [Manage data in containers](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
+
+
