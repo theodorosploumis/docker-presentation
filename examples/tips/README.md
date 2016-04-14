@@ -35,6 +35,7 @@ with a pull request.
 - Never do things like ```apt-get upgrade``` inside a Dockerfile
 - Containers should model processes and not virtual machines
 - Create local shortcut/aliases for common docker commands and workflows
+- Use shell scripts for complicated RUN commands on the Dockerfile as also as for starting processes on containers
 
 #### Resources
 
