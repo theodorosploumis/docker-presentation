@@ -136,9 +136,15 @@ ONBUILD RUN echo "This is ONBUILD."
 #
 # The VOLUME instruction creates a mount point with the specified name and
 # marks it as holding externally mounted volumes from native host or other containers.
-# The value can be a JSON array, VOLUME ["/var/log/"], or a
-# plain string with multiple arguments, such as VOLUME /var/log or VOLUME /var/log /var/db.
+# The value can be a JSON array, VOLUME ["/var/log/"], or a plain string with multiple arguments, 
+# such as VOLUME /var/log or VOLUME /var/log /var/db.
 # Paths can be ralative (to WORKDIR) or absolute.
+# Anything after the VOLUME instruction in a Dockerfile will not be able to make changes to that volume.
+# Data volumes are initialized when a container is created.
+# Data volumes can be shared and reused among containers.
+# Changes to a data volume are made directly.
+# Changes to a data volume will not be included when you update an image.
+# Data volumes persist even if the container itself is deleted.
 #
 # Usage: VOLUME ["/dir_1", "/dir_2", ...]
 # Usage: VOLUME /dir_1, /dir_2, ...
