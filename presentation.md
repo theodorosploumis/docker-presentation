@@ -83,7 +83,7 @@ ________________________
  - Union file systems ([UnionFS](https://www.wikiwand.com/en/UnionFS): AUFS, btrfs, vfs etc)
  - [Namespaces](https://en.wikipedia.org/wiki/Cgroups#NAMESPACE-ISOLATION) (pid, net, ipc, mnt, uts)
  - Control Groups ([cgroups](https://www.wikiwand.com/en/Cgroups))
- - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer))
+ - Container format ([libcontainer](https://github.com/opencontainers/runc/tree/master/libcontainer "Libcontainer provides a native Go implementation for creating containers with namespaces, cgroups, capabilities, and filesystem access controls. It allows you to manage the lifecycle of the container performing additional operations after the container is created."))
 
 ###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
 
