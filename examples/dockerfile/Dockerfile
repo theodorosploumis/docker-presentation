@@ -160,6 +160,19 @@ VOLUME /added-container-folder /copied-container-folder
 # Usage: WORKDIR /path/on/container
 WORKDIR /var/www/html
 
+# ENTRYPOINT
+#
+# An ENTRYPOINT allows you to configure a container that will run as an executable.
+# Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT,
+# and will override all elements specified using CMD.
+# You can override the ENTRYPOINT instruction using the "docker run --entrypoint <command>" flag.
+# Only the last ENTRYPOINT instruction in the Dockerfile will have an effect.
+# The default ENTRYPOINT is /bin/sh -c and CMD is passed into that as an argument.
+#
+# Usage: ENTRYPOINT ["executable", "param1", "param2"] #(exec form, preferred)
+# Usage: ENTRYPOINT command param1 param2 #(shell form)
+ENTRYPOINT ["top", "-b"]
+
 # CMD
 #
 # There can only be one CMD instruction in a Dockerfile!
@@ -172,15 +185,3 @@ WORKDIR /var/www/html
 # Usege: CMD ["param1","param2"] #(as default parameters to ENTRYPOINT)
 # Usage: CMD command param1 param2 #(shell form)
 CMD ls
-
-# ENTRYPOINT
-#
-# An ENTRYPOINT allows you to configure a container that will run as an executable.
-# Command line arguments to docker run <image> will be appended after all elements in an exec form ENTRYPOINT,
-# and will override all elements specified using CMD.
-# You can override the ENTRYPOINT instruction using the "docker run --entrypoint <command>" flag.
-# Only the last ENTRYPOINT instruction in the Dockerfile will have an effect.
-#
-# Usage: ENTRYPOINT ["executable", "param1", "param2"] #(exec form, preferred)
-# Usage: ENTRYPOINT command param1 param2 #(shell form)
-ENTRYPOINT ["top", "-b"]
