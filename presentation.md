@@ -493,6 +493,8 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 ![Pythons over Docker!](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_python.png)
 
+[Review this presentation](https://goo.gl/lkau9t)
+
 > Next: Docker in production, Scaling, Private registries, PaaS.
 
 ###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
