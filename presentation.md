@@ -22,7 +22,7 @@ ________________________
 
 ---
 
-### What is Docker (v1.9)
+### What is Docker (v1.10)
 
 > Docker is an open platform for developing, shipping, and running applications.
 
