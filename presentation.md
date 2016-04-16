@@ -204,8 +204,8 @@ docker run -i -t ubuntu /bin/bash
 
 > A Dockerfile is a text document that contains all the commands a user could call on the command line to create an image.
 
+ - [Dockerfile with inline comments](examples/dockerfile/Dockerfile) of an example Dockerfile
  - Official [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
- - [Inline docs](examples/dockerfile/Dockerfile) of an example Dockerfile
  - Real Dockerfiles ([rails](https://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](https://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](https://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](https://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
 
 ---
@@ -220,7 +220,7 @@ docker run -i -t ubuntu /bin/bash
 - Using docker [Compose](https://docs.docker.com/compose/)
 - Share an image (share this presentation)
 - Package an app with its environment
-- Screen and sound within containers
+- Screen and sound within containers (x-forward)
 
 ---
 
@@ -313,7 +313,7 @@ docker run -d --name drupal_example \
 // Open http://localhost:8280 to continue with the installation
 // On the db host use: mysql
 
-// See the linking
+// Ther is a proper linking
 docker inspect -f "{{ .HostConfig.Links }}" drupal_example
 ```
 
@@ -405,6 +405,10 @@ docker load < myapache_image.tar
 See examples at [hub.docker.com/u/jess](https://hub.docker.com/u/jess/)
 
 ```
+// Before staring we should grant access to everyone on the X Server (locally)
+// Otherwise the containers below will never start and they will not be able to use x11
+xhost +
+
 // Libreoffice
 docker run  -d \
             -v /etc/localtime:/etc/localtime:ro \
@@ -433,6 +437,9 @@ docker run  -d \
             --group-add audio \
             --name audacity \
             jess/audacity
+            
+// Disable access to x11
+xhost -
 
 ```
 
@@ -445,10 +452,10 @@ There are known best practices (see a list at [examples/tips](https://github.com
 - Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [imagelayers.io](https://imagelayers.io))
 - Create your own tiny base
 - Containers are not Virtual Machines
-- Full stack Images vs 1 process per Container
+- Full stack Images VS 1 process per Container
 - Create your private registry
 - Create shortcut commands
-- Use docker-compose.yml templates (check [lorry.io](https://lorry.io/))
+- Use docker-compose.yml templates (see why at [lorry.io](https://lorry.io/))
 - Be aware of the hub.docker.com agent version
 
 ---
