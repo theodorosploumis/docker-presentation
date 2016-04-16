@@ -420,7 +420,7 @@ docker run -it \
            -v $HOME/.config/sublime-text-3/:/root/.config/sublime-text-3 \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -e DISPLAY=$DISPLAY \
-           --name sublime_text
+           --name sublime_text \
            jess/sublime-text-3
 
 // Audacity (sound in docker container)
