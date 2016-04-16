@@ -15,7 +15,7 @@ ________________________
 
 ### Let me ask you
 
-- Who knows about [Docker]([docker.com](http://docker.com)?
+- Who knows about [Docker](http://docker.com)?
 - Who uses Docker for development?
 - Who uses Docker in production?
 - Who tried but could not do it?
