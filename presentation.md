@@ -72,6 +72,8 @@ ________________________
  - Local development
  - Multi-tier applications
  - PaaS, SaaS
+ 
+###### See the [survey results for 2016](https://www.docker.com/survey-2016)
 
 ---
 
