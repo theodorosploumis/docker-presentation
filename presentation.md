@@ -72,7 +72,7 @@ ________________________
  - Local development
  - Multi-tier applications
  - PaaS, SaaS
- 
+
 ###### See the [survey results for 2016](https://www.docker.com/survey-2016)
 
 ---
@@ -439,7 +439,7 @@ docker run  -d \
             --group-add audio \
             --name audacity \
             jess/audacity
-            
+
 // Disable access to x11
 xhost -
 
@@ -475,10 +475,12 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 ### Docker Alternatives
 
-- [Rocket](https://github.com/coreos/rkt)
-- [Linux Containers](https://linuxcontainers.org/)
+- [Rocket, rkt](https://github.com/coreos/rkt)
+- [Linux Containers, LXC](https://linuxcontainers.org/)
+- [Linux container hypervisor, LXD](http://www.ubuntu.com/cloud/lxd)
+- [BSD Jails](https://www.freebsd.org/doc/handbook/jails.html)
+- [Solaris Zones](http://oracle.com/solaris)
 - [drawbridge](http://research.microsoft.com/en-us/projects/drawbridge/)
-- [Project Calico](https://www.projectcalico.org/)
 
 ---
 
