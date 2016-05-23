@@ -20,6 +20,7 @@ with a pull request.
 - Uppercase the Dockerfile instructions
 - Split multiprocess images to several images with one process per images
 - Use ADD and VOLUME at the end of the Dockerfile (except if files are needed before)
+- If you have multiple Dockerfile steps that use different files from your context, ```COPY``` them individually, rather than all at once
 - Prefer using an ENTRYPOINT always
 - Install specific versions of software
 - With COPY the directories are not copied, only their files
