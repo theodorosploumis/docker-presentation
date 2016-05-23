@@ -32,6 +32,7 @@ with a pull request.
 - Things that do not change ofter should stay on top of the Dockerfile (eg MAINTAINER)
 - If you need to work with local files use VOLUME and not ADD
 - Test builds locally before triggering automated builds on online docker registries
+- Use ```Dockerfile``` for infrastructure and ```docker-compose``` for tasks
 - Regex used in Dockerfiles are from Go language
 - Never do things like ```apt-get upgrade``` inside a Dockerfile
 - Containers should model processes and not virtual machines
@@ -50,5 +51,3 @@ with a pull request.
 - (10/2015) [Docker best practices: Dockerfile](https://getcarina.com/docs/best-practices/docker-best-practices-dockerfile/)
 - (12/2014) [Understanding Volumes in Docker](http://container-solutions.com/understanding-volumes-docker/)
 - [Manage data in containers](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
-
-
