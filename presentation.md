@@ -491,6 +491,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
  - [Docker in Practice](https://www.manning.com/books/docker-in-practice), [The Docker Book](http://www.dockerbook.com/) (books)
  - [Docker aliases/shortcuts](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/shortcuts/docker-aliases.sh)
  - Docker [case studies](https://www.docker.com/customers)
+ - [Docker for Developers (Videos)](https://www.youtube.com/playlist?list=PLjQo0sojbbxViGEbI_87SPXpb3neuVqDL)
 
 ---
 
