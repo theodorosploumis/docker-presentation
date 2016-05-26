@@ -462,7 +462,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 ---
 
-### The Docker war
+### The Docker [ecosystem](http://comp.photo777.org/wp-content/uploads/2015/09/Docker-ecosystem-8.5.1.pdf)
 
 | Type | Software |
 |:----:|----------|
