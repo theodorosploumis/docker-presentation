@@ -40,6 +40,7 @@ with a pull request.
 - Be careful with volumes. When docker mounts folders on read-write mode your files may be deleted
 - A volume will never be deleted as long as a container is linked to it
 - Use shell scripts for complicated RUN commands on the Dockerfile as also as for starting processes on containers
+- Running the same image multiple times does not add multiple images on the host disk (```1x ubuntu:latest == 100x ubuntu:latest```) 
 
 #### Resources
 
@@ -51,3 +52,4 @@ with a pull request.
 - (10/2015) [Docker best practices: Dockerfile](https://getcarina.com/docs/best-practices/docker-best-practices-dockerfile/)
 - (12/2014) [Understanding Volumes in Docker](http://container-solutions.com/understanding-volumes-docker/)
 - [Manage data in containers](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
+- (18 Nov 2014)[Data-only container madness](http://container42.com/2014/11/18/data-only-container-madness/)
