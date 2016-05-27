@@ -53,4 +53,4 @@ with a pull request.
 - (10/2015) [Docker best practices: Dockerfile](https://getcarina.com/docs/best-practices/docker-best-practices-dockerfile/)
 - (12/2014) [Understanding Volumes in Docker](http://container-solutions.com/understanding-volumes-docker/)
 - [Manage data in containers](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
-- (18 Nov 2014)[Data-only container madness](http://container42.com/2014/11/18/data-only-container-madness/)
+- (18 Nov 2014) [Data-only container madness](http://container42.com/2014/11/18/data-only-container-madness/)
