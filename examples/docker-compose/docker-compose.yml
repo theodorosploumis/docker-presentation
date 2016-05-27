@@ -1,5 +1,6 @@
 # Creates a Drupal web app with MySQL database
 # Usage: docker-compose up -d
+# Notice that mysql server name is: mysql
 version: "2"
 services:
   web:
