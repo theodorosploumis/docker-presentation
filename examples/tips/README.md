@@ -18,6 +18,7 @@ with a pull request.
 - Search for similar public images before creating your own.
 - When you need software to install another software remove the first after the build.
 - Uppercase the Dockerfile instructions.
+- Split the Dockerfile instructions while developing your Dockerfile and merge them when you are ready to publish it.
 - Split multiprocess images to several images with one process per images.
 - Use ADD and VOLUME at the end of the Dockerfile (except if files are needed before).
 - If you have multiple Dockerfile steps that use different files from your context, ```COPY``` them individually, rather than all at once.
