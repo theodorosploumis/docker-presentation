@@ -1,8 +1,8 @@
 ![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo_white.png)
 
-## Docker with NodeJS - Introduction
+## Docker for Developers - Introduction
 
-#### [NodeJS Meetup Thessaloniki](http://www.meetup.com/Thessaloniki-Node-js-Meetup/), June 2016
+#### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
 
 ###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
 ________________________
@@ -33,8 +33,6 @@ ________________________
 ### Docker vs VMs
 
 ![Docker vs traditional Virtualization](https://insights.sei.cmu.edu/assets/content/VM-Diagram.png)
-
-[Why is Docker better than VMs](https://github.com/docker/docker#better-than-vms)
 
 ---
 
@@ -134,7 +132,7 @@ A Client with a Daemon as also as the docker-compose tool. Usually referred simp
 
 ### Docker machine
 
-![Docker Machine logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_machine.png)
+![Docker machine logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_machine.png)
 
 A tool which makes it really easy to create Docker hosts on your computer,
 on cloud providers and inside your own data center.
@@ -145,7 +143,7 @@ Required for Mac, Windows users.
 
 ### Docker compose
 
-![Docker Compose logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_compose.png)
+![Docker compose logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_compose.png)
 
 A tool for defining and running complex applications with Docker
 (eg a multi-container application) with a single file.
@@ -154,7 +152,7 @@ A tool for defining and running complex applications with Docker
 
 ### Docker swarm
 
-![Docker Swarm logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_swarm.png)
+![Docker swarm logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_swarm.png)
 
 A native clustering tool for Docker. Swarm pools together several Docker
 hosts and exposes them as a single virtual Docker host. It scale up to multiple hosts.
@@ -163,7 +161,7 @@ hosts and exposes them as a single virtual Docker host. It scale up to multiple 
 
 ### Docker distribution
 
-![Docker Distribution logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_distribution.png)
+![Docker distribution logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_distribution.png)
 
 A (hosted) service containing repositories of images which responds to the Registry API.
 
@@ -335,7 +333,7 @@ docker inspect -f "{{ .HostConfig.Links }}" drupal_example
 
 ### Example: Using Docker Compose
 
-Let's create a Drupal app using [docker compose](https://github.com/theodorosploumis/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml).
+Let's create a Drupal app with [docker-compose.yml](https://github.com/theodorosploumis/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml)
 
 ```
 cd ~/Docker-presentation
@@ -343,6 +341,7 @@ git clone git@github.com:theodorosploumis/docker-presentation.git
 cd docker-presentation/examples/docker-compose
 
 // Run docker-compose using the docker-compose.yml
+cat docker-compose.yml
 docker-compose up -d
 ```
 
@@ -365,7 +364,7 @@ docker run -itd --name docker_presentation \
 
 // Open http://localhost:8480, you should see this presentation
 
-// Push it on the hub (hub.docker.com/r/tplcom/docker-presentation/)
+// Push it on the hub.docker.com
 docker push tplcom/docker-presentation
 ```
 
@@ -507,7 +506,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 ### Questions?
 
-![Docker carries White Tower](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_thess.png)
+![Pythons over Docker!](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_python.png)
 
 [Review this presentation](https://goo.gl/lkau9t)
 
