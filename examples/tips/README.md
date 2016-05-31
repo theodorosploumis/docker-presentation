@@ -43,6 +43,7 @@ with a pull request.
 - Use shell scripts for complicated RUN commands on the Dockerfile as also as for starting processes on containers.
 - Running the same image multiple times does not add multiple images on the host disk (```1x ubuntu:latest == 100x ubuntu:latest```).
 - Avoid using a GUI. CLI makes it easier to understand the Docker philosophy.
+- Prefer running processes inside containers with a non ROOT user for security reasons.
 
 #### Resources
 
