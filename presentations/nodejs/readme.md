@@ -1,8 +1,8 @@
 ![Docker logo](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_logo_white.png)
 
-## Docker for Developers - Introduction
+## Docker with NodeJS - Introduction
 
-#### [Python Meetup Thessaloniki](http://www.meetup.com/PyThess/), 15 April 2016
+#### [NodeJS Meetup Thessaloniki](http://www.meetup.com/Thessaloniki-Node-js-Meetup/), June 2016
 
 ###### [TheodorosPloumis.com](http://www.theodorosploumis.com/en) / [@theoploumis](http://twitter.com/theoploumis)
 ________________________
@@ -22,7 +22,7 @@ ________________________
 
 ---
 
-### What is Docker (v1.10)
+### What is Docker (v1.11)
 
 > Docker is an open platform for developing, shipping, and running applications.
 

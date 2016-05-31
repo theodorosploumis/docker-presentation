@@ -6,7 +6,7 @@
 
 		<title>Docker for developers - Basics</title>
 
-		<meta name="description" content="An intro about Docker for developers, Thessaloniki 2016, Python meetup">
+		<meta name="description" content="An intro about Docker for developers, Thessaloniki 2016">
 		<meta name="author" content="TheodorosPloumis">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,6 +32,13 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+		<script>
+			var markdown = document.getElementsByClassName('markdown-slides').section,
+					md_nodejs = document.getElementsByClassName('docker-nodejs'),
+					md_python = document.getElementsByClassName('docker-python');
+
+		</script>
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
@@ -40,15 +47,14 @@
 	<body>
 
 		<div class="reveal">
-
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section data-markdown="presentation.md"
+			<div class="slides markdown-slides">
+				<section data-markdown="presentations/introduction/readme.md"
                          data-separator="^\n---\n"
                          data-vertical="^\n--\n"
                          data-notes="^Note:"
                          data-charset="iso-8859-15">
-                </section>
+        </section>
 			</div>
 
 		</div>
