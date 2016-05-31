@@ -506,7 +506,7 @@ There are known best practices (see a list at [examples/tips](https://github.com
 
 ### Questions?
 
-![Pythons over Docker!](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_python.png)
+![Pythons over Docker!](https://raw.githubusercontent.com/theodorosploumis/docker-presentation/gh-pages/img/docker_thess.png)
 
 [Review this presentation](https://goo.gl/lkau9t)
 
