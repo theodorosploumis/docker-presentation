@@ -167,6 +167,48 @@ A (hosted) service containing repositories of images which responds to the Regis
 
 ---
 
+### Steps of a Docker workflow
+
+```
+docker run -i -t -d ubuntu:15.04 /bin/bash
+```
+
+ - Pulls the ubuntu:15.04 [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
+ - Creates a new [container](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
+ - Allocates a filesystem and mounts a read-write [layer](https://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
+ - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
+ - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
+ - Executes a process that you specify (``` /bin/bash ```)
+ - Captures and provides application output
+
+---
+
+### The docker image
+
+![ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/image-layers.jpg)
+
+> A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.
+
+---
+
+### The docker container
+
+![container using ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/container-layers.jpg)
+
+> A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides. For each containers there is a new, thin, writable layer ("container layer") on top of the underlying stack (image).
+
+---
+
+### The Dockerfile
+
+> A Dockerfile is a text document that contains all the commands a user could call on the command line to create an image.
+
+ - [Dockerfile with inline comments](examples/dockerfile/Dockerfile) just for education
+ - [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) on docker docs
+ - Official Dockerfiles ([rails](https://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](https://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](https://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](https://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
+
+---
+
 ### Common Docker Commands
 
 ```
@@ -196,51 +238,17 @@ docker rm [CONTAINER]
 
 ---
 
-### Steps of a Docker workflow
-
-```
-docker run -i -t ubuntu /bin/bash
-```
-
- - Pulls the ubuntu [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
- - Creates a new [container](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
- - Allocates a filesystem and mounts a read-write [layer](https://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
- - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
- - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
- - Executes a process that you specify (``` /bin/bash ```)
- - Captures and provides application output
-
----
-
-### Dockerfile
-
-> A Dockerfile is a text document that contains all the commands a user could call on the command line to create an image.
-
- - [Dockerfile with inline comments](examples/dockerfile/Dockerfile) of an example Dockerfile
- - Official [Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
- - Real Dockerfiles ([rails](https://github.com/docker-library/rails/blob/master/Dockerfile), [nodejs](https://github.com/ReadyTalk/nodejs-docker/blob/master/base/Dockerfile), [django](https://github.com/docker-library/django/blob/master/3.4/Dockerfile), [Drupal](https://github.com/docker-library/drupal/blob/master/8.1/fpm/Dockerfile))
-
----
-
 ### Docker examples
 
-- Showcase a project
 - SSH into a container
-- Build an Image
+- Build an image
 - Docker [Volume](https://docs.docker.com/engine/userguide/containers/dockervolumes/)
 - [Linked](https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/) containers
-- Using docker [Compose](https://docs.docker.com/compose/)
+- Using [docker-compose](https://docs.docker.com/compose/)
+- Scale containers with docker-compose
 - Share an image (share this presentation)
 - Package an app with its environment
 - Screen and sound within containers (x-forward)
-
----
-
-### Example: Showcase
-```
-docker pull supertest2014/nyan
-docker run --rm -it supertest2014/nyan
-```
 
 ---
 
@@ -325,7 +333,7 @@ docker run -d --name drupal_example \
 // Open http://localhost:8280 to continue with the installation
 // On the db host use: mysql
 
-// Ther is a proper linking
+// There is a proper linking
 docker inspect -f "{{ .HostConfig.Links }}" drupal_example
 ```
 
@@ -343,6 +351,23 @@ cd docker-presentation/examples/docker-compose
 // Run docker-compose using the docker-compose.yml
 cat docker-compose.yml
 docker-compose up -d
+```
+
+---
+
+### Example: Scaling with Docker Compose
+
+With the same Drupal app let's use a more advanced  [docker-compose.yml](https://github.com/theodorosploumis/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml) file.
+
+```
+cd ~/Docker-presentation
+git clone git@github.com:theodorosploumis/docker-presentation.git
+cd docker-presentation/examples/docker-compose-scale
+
+// Run docker-compose using the docker-compose.yml
+docker-compose up -d
+
+// Scale web and let haproxy manage the traffic
 ```
 
 ---
