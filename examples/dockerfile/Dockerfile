@@ -1,4 +1,4 @@
-# Docker version 1.10
+# Docker version 1.11.1
 #
 # Line blocks used for commenting start with a #.
 #
