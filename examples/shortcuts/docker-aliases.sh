@@ -8,6 +8,12 @@ alias docker-stop="docker stop $(docker ps -a -q)"
 alias dinfo="docker info"
 alias drun="docker run -d -t -p "
 
+# List images (with sort and less options)
+alias dimages="docker images | less -S"
+alias dimages-repo="docker images | sort -k 1 | less -S"
+alias dimages-date="docker images | sort -s -n -k 5,5 | less -S"
+alias dimages-size="docker images | sort -s -n -k 7,7 | less -S"
+
 # Debug host ip
 # Check this issue https://github.com/docker/docker/issues/8395#issuecomment-58063080
 alias hostip="ip route show 0.0.0.0/0 | grep -Eo 'via \S+' | awk '{ print \$2 }'"
