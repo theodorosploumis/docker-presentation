@@ -351,23 +351,6 @@ docker-compose up -d
 
 ---
 
-### Example: Scaling with Docker Compose
-
-With the same Drupal app let's use a more advanced  [docker-compose.yml](https://github.com/theodorosploumis/docker-presentation/blob/gh-pages/examples/docker-compose/docker-compose.yml) file.
-
-```
-cd ~/Docker-presentation
-git clone git@github.com:theodorosploumis/docker-presentation.git
-cd docker-presentation/examples/docker-compose-scale
-
-// Run docker-compose using the docker-compose.yml
-docker-compose up -d
-
-// Scale web and let haproxy manage the traffic
-```
-
----
-
 ### Example: Share a public Image
 
 ```
