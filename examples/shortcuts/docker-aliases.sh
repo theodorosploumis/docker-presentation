@@ -41,6 +41,11 @@ function docker-rm-all() {
   docker rm $(docker ps -a -q)
 }
 
+# Remove containers that run for more than 30 min
+function docker-rm-after-30() {
+  docker kill $(docker ps --format "{{.ID}} {{.Status}} {{.Image}}" | awk '{ time=$3; metrics=$4; limit=30; if (time >= limit && metrics=minutes) print $1; }')
+}
+
 # Login into a docker container with bash
 # Usage: docker-ssh-bash [container]
 function docker-ssh-bash() {
