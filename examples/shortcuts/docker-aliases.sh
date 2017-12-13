@@ -63,6 +63,11 @@ function docker-pull-all(){
   docker images | awk '(NR>1) && ($2!~/none/) {print $1":"$2}' | xargs -L1 docker pull
 }
 
+# Remove all networks
+function docker-rm-network() {
+  docker network rm $(docker network ls --format '{{.Name}}')
+}
+
 # Update all docker* software (Linux specific)
 function docker-update(){
 
