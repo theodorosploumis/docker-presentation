@@ -32,7 +32,7 @@ ________________________
 
 ### Docker vs VMs
 
-![Docker vs traditional Virtualization](https://insights.sei.cmu.edu/assets/content/VM-Diagram.png)
+![Docker vs traditional Virtualization](https://image.slidesharecdn.com/why-docker-website-130719212914-phpapp01-131208123039-phpapp01/95/hypervisor-versus-linux-containers-with-docker-25-638.jpg)
 
 ---
 
@@ -93,7 +93,7 @@ ________________________
 
 ### The Docker architecture
 
-![Docker architecture](https://docs.docker.com/engine/article-img/architecture.svg)
+![Docker architecture](https://docs.docker.com/engine/images/architecture.svg)
 ###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
 
 ---
@@ -185,13 +185,13 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 
 ### The docker image
 
-![ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/image-layers.jpg "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.")
+![ubuntu:15.04 image](https://i.stack.imgur.com/J2cge.jpg "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.")
 
 ---
 
 ### The docker container
 
-![container using ubuntu:15.04 image](https://docs.docker.com/engine/userguide/storagedriver/images/container-layers.jpg "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides. For each containers there is a new, thin, writable layer - container layer - on top of the underlying stack (image).")
+![container using ubuntu:15.04 image](https://i.stack.imgur.com/J2cge.jpg "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides. For each containers there is a new, thin, writable layer - container layer - on top of the underlying stack (image).")
 
 ---
 
@@ -517,9 +517,3 @@ There are known best practices (see a list at [examples/tips](https://github.com
 > Next: Docker in production, Scaling, Private registries, PaaS.
 
 ###### In this presentation I have used [oh my zsh](http://ohmyz.sh/), [docker 1.11.1](https://github.com/docker/docker/releases/tag/v1.11.1), [wharfee](https://github.com/j-bennet/wharfee) and [dry](https://github.com/moncho/dry).
-
----
-
-### Bonus!
-
-> Get the [SKGTech.io docker image](https://github.com/skgtech/skgtech.io-docker)
