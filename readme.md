@@ -93,7 +93,7 @@ ________________________
 
 ### The Docker architecture
 
-![Docker architecture](https://docs.docker.com/engine/images/architecture.svg)
+![Docker architecture](img/docker_architecture.jpg)
 ###### See more at [Understanding docker](https://docs.docker.com/engine/understanding-docker/)
 
 ---
