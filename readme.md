@@ -176,7 +176,7 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
  - Pulls the ubuntu:15.04 [image](https://docs.docker.com/engine/userguide/containers/dockerimages/ "A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot.") from the [registry](https://docs.docker.com/registry/ "The central place where all publicly published images live. You can search it, upload your images there and when you pull a docker image, it comes the repository/hub.")
  - Creates a new [container](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/ "A runnable instance of the image, basically it is a process isolated by docker that runs on top of the filesystem that an image provides.")
  - Allocates a filesystem and mounts a read-write [layer](https://docs.docker.com/engine/reference/glossary/#filesystem "A set of read-only files to provision the system. Think of a layer as a read only snapshot of the filesystem.")
- - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging_%28networking%29 "")
+ - Allocates a [network/bridge interface](https://www.wikiwand.com/en/Bridging%20(networking))
  - Sets up an [IP address](https://www.wikiwand.com/en/IP_address "An Internet Protocol address (IP address) is a numerical label assigned to each device (e.g., computer, printer) participating in a computer network that uses the Internet Protocol for communication.")
  - Executes a process that you specify (``` /bin/bash ```)
  - Captures and provides application output
@@ -186,7 +186,7 @@ docker run -i -t -d ubuntu:15.04 /bin/bash
 ### The docker image
 
 ![ubuntu:15.04 image](img/docker_image.jpg "
-A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container’s root filesystem.")
+A read-only layer that is the base of your container. It can have a parent image to abstract away the more basic filesystem snapshot. Each Docker image references a list of read-only layers that represent filesystem differences. Layers are stacked on top of each other to form a base for a container root filesystem.")
 
 ---
 
