@@ -465,7 +465,7 @@ xhost -
 
 There are known best practices (see a list at [examples/tips](https://github.com/theodorosploumis/docker-presentation/tree/gh-pages/examples/tips))
 
-- Optimize containers (check [fromlatest.io](https://www.fromlatest.io/) and [dockersl.im](https://dockersl.im))
+- Optimize containers (check [fromlatest.io](https://www.fromlatest.io/), [wagoodman/dive](https://github.com/wagoodman/dive), [slimtoolkit](https://github.com/slimtoolkit/slim), [docker-squash](https://github.com/goldmann/docker-squash))
 - Create your own tiny base
 - Containers are not Virtual Machines
 - Full stack Images VS 1 process per Container
